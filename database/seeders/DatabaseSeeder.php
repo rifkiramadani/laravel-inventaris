@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Database\Seeders\StatusSeeders;
 use Database\Seeders\KondisiSeeders;
 use Database\Seeders\KategoriSeeders;
 use Database\Seeders\PeminjamSeeders;
@@ -26,7 +27,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // KondisiSeeders::class,
             // KategoriSeeders::class,
-            PeminjamSeeders::class,
+            // PeminjamSeeders::class,
+            StatusSeeders::class,
         ]);
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeminjamController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventarisController;
+use App\Http\Controllers\PeminjamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,10 @@ Route::post('/peminjam', [PeminjamController::class, 'store']);
 Route::get('/peminjam/{id}/edit', [PeminjamController::class, 'edit']);
 Route::put('/peminjam/{id}', [PeminjamController::class, 'update']);
 Route::delete('/peminjam/{id}', [PeminjamController::class, 'destroy']);
+
+//PEMINJAMAN
+Route::get('/peminjaman', [PeminjamanController::class, 'index']);
+Route::get('/peminjaman/create', [PeminjamanController::class, 'create']);
+Route::post('/peminjaman', [PeminjamanController::class, 'store']);
+Route::put('/peminjaman/update-status', [PeminjamanController::class, 'updateStatus']);
+Route::delete('/peminjaman/{id}', [PeminjamanController::class, 'destroy']);

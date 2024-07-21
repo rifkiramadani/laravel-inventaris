@@ -36,11 +36,10 @@
   <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Sistem Informasi Inventaris</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Sistem Informasi <br> Inventaris</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <div class="navbar-nav">
           <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="#">Sign out</a>
@@ -50,7 +49,7 @@
       
       <div class="container-fluid">
         <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-4">
             <div class="position-sticky pt-3">
               <ul class="nav flex-column">
                 <li class="nav-item">
@@ -66,15 +65,15 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{ request()->is('peminjaman') ? 'active' : '' }}" href="/peminjaman">
-                    <span data-feather="archive"></span>
-                    Peminjaman
-                  </a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link {{ request()->is('peminjam') ? 'active' : '' }}" href="/peminjam">
                     <span data-feather="users"></span>
                     Peminjam
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link {{ request()->is('peminjaman', 'peminjaman/create') ? 'active' : '' }}" href="/peminjaman">
+                    <span data-feather="archive"></span>
+                    Peminjaman
                   </a>
                 </li>
               </ul>
@@ -93,5 +92,7 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
       <script src="{{ asset('js/dashboard.js') }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      @stack('scripts')
   </body>
 </html>
