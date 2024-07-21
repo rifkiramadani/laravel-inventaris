@@ -66,7 +66,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{ request()->is('peminjam') ? 'active' : '' }}" href="/peminjaman">
+                  <a class="nav-link {{ request()->is('peminjaman') ? 'active' : '' }}" href="/peminjaman">
                     <span data-feather="archive"></span>
                     Peminjaman
                   </a>

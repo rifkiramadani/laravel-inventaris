@@ -7,6 +7,15 @@
             <h1 class="mb-3"><span class="bg-secondary-subtle px-3 py-1 rounded shadow-sm">TAMBAH BARANG</span></h1>
             <div class="card">
                 <div class="card-body">
+                  @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                   <h6 class="mb-3"><span class="text-secondary">Tambah Barang Untuk Di letakkan di Data Inventaris</span></h6>
                   <form action="/inventaris" method="post" enctype="multipart/form-data">
                     @csrf

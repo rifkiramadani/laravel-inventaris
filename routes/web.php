@@ -33,3 +33,8 @@ Route::delete('/inventaris/{id}', [InventarisController::class, 'destroy']);
 
 // PEMINJAM
 Route::get('/peminjam', [PeminjamController::class, 'index']);
+Route::get('/peminjam/create', [PeminjamController::class, 'create']);
+Route::post('/peminjam', [PeminjamController::class, 'store']);
+Route::get('/peminjam/{id}/edit', [PeminjamController::class, 'edit']);
+Route::put('/peminjam/{id}', [PeminjamController::class, 'update']);
+Route::delete('/peminjam/{id}', [PeminjamController::class, 'destroy']);
