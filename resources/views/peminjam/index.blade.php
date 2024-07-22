@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="mb-3"><span class="bg-secondary-subtle px-3 py-1 rounded shadow-sm">PEMINJAM</span></h1>
-                <div class="card">
+                <h1 class="mb-3 animate__animated animate__fadeInRight"><span class="bg-secondary-subtle px-3 py-1 rounded shadow-sm">PEMINJAM</span></h1>
+                <div class="card animate__animated animate__fadeInUp">
                     <div class="card-body">
                         @if (session()->has('success'))
                         <div class="alert alert-success">

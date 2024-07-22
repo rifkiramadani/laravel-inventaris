@@ -9,11 +9,13 @@
     <title>Sistem Informasi Inventaris</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
-
-    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
     <!-- Bootstrap core CSS -->
-<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -35,7 +37,7 @@
   </head>
   <body>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow animate__animated animate__fadeInDown">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Sistem Informasi <br> Inventaris</a>
           <li class="nav-item dropdown mb-3" style="margin-right: 5rem">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
@@ -56,7 +58,7 @@
       
       <div class="container-fluid">
         <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-4">
+          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-4 animate__animated animate__fadeInLeft">
             <div class="position-sticky pt-3">
               <ul class="nav flex-column">
                 {{-- <li class="nav-item">
