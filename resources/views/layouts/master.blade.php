@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Sistem Informasi Inventaris</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -37,14 +37,21 @@
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Sistem Informasi <br> Inventaris</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-nav">
-          <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="#">Sign out</a>
-          </div>
-        </div>
+          <li class="nav-item dropdown mb-3" style="margin-right: 5rem">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              Selamat Datang {{ auth()->user()->name }}
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item">
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit" class="btn" onclick="return confirm('Yakin Ingin Logout??')" style="">Logout</button>  
+                </form>  
+              </li>
+              {{-- <li><a class="dropdown-item" href="#">Another action</a></li> --}}
+            </ul>
+          </li>
+        
       </header>
       
       <div class="container-fluid">
@@ -52,28 +59,36 @@
           <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-4">
             <div class="position-sticky pt-3">
               <ul class="nav flex-column">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
-                    <span data-feather="home"></span>
-                    Dashboard
+                    <h4>
+                      <span data-feather="home"></span>
+                      Dashboard
+                    </h4>
                   </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                   <a class="nav-link {{ request()->is(['inventaris', 'inventaris/create', 'inventaris/{id}/edit', 'inventaris/{id}']) ? 'active' : '' }}" aria-current="page" href="/inventaris">
-                    <span data-feather="package"></span>
-                    Inventaris
+                    <h5>
+                      <span data-feather="package"></span>
+                      Inventaris
+                    </h5>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link {{ request()->is('peminjam') ? 'active' : '' }}" href="/peminjam">
-                    <span data-feather="users"></span>
-                    Peminjam
+                    <h5>
+                      <span data-feather="users"></span>
+                      Peminjam
+                    </h5>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link {{ request()->is('peminjaman', 'peminjaman/create') ? 'active' : '' }}" href="/peminjaman">
-                    <span data-feather="archive"></span>
-                    Peminjaman
+                    <h5>
+                      <span data-feather="archive"></span>
+                      Peminjaman
+                    </h4>
                   </a>
                 </li>
               </ul>
